@@ -46,7 +46,6 @@ public class Player : MonoBehaviour
 
     void MovementInput()
     {
-
         float moveX = joystick.Horizontal;
         float moveY = joystick.Vertical;
         moveDirection = new Vector2(moveX, moveY);
@@ -68,6 +67,6 @@ public class Player : MonoBehaviour
 
     void Move()
     {
-        rb.velocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed);
+        rb.velocity = new Vector2(moveDirection.x * moveSpeed * Time.fixedDeltaTime, moveDirection.y * moveSpeed * Time.fixedDeltaTime);
     }
 }
