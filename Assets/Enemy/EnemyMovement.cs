@@ -7,19 +7,16 @@ public class EnemyMovement : MonoBehaviour
     const int X_AXIS = 1;
     const int Y_AXIS = 2;
     public int currentAxis;
-
-    public int maxHealth = 100;
     public Rigidbody2D rb;
-    private int currentHealth;
-
     private Vector3 startingPostion;
-    private float moveRadius = 10f;
-    private int moveSpeed = 3;
+    private Collider2D enemyCollider;
+    public float moveRadius = 10f;
+    public int moveSpeed = 3;
 
     private void Start()
     {
-        currentHealth = maxHealth;
         startingPostion = transform.position;
+        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Default"), LayerMask.NameToLayer("Bullet"));
     }
 
     private void Update()
@@ -63,6 +60,7 @@ public class EnemyMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        FaceOpposite(currentAxis, true);
+        if (collision.collider.gameObject.layer == LayerMask.NameToLayer("Impassable"))
+            FaceOpposite(currentAxis, true);
     }
 }
