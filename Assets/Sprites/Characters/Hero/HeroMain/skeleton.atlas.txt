@@ -1,0 +1,30 @@
+skeleton.png
+size:318,538
+filter:Linear,Linear
+pma:true
+Bicep
+bounds:208,64,97,94
+Body
+bounds:2,194,176,173
+Body Back
+bounds:2,369,178,167
+Foot
+bounds:208,7,55,45
+rotate:90
+Forearm
+bounds:2,2,76,69
+rotate:90
+Hand
+bounds:147,18,59,60
+Head
+bounds:182,248,134,143
+Head Back
+bounds:182,393,134,143
+Shield
+bounds:2,80,112,171
+rotate:90
+Shield Front
+bounds:180,160,86,130
+rotate:90
+Thigh
+bounds:73,6,72,72
