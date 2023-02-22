@@ -60,7 +60,7 @@ public class EnemyMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.gameObject.layer == LayerMask.NameToLayer("Impassable"))
-            FaceOpposite(currentAxis, true);
+        Debug.Log(1);
+        FaceOpposite(currentAxis, true);
     }
 }

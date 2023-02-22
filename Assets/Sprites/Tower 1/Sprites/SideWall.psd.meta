@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 693c1d48303264fa59f2096e33c6053a
+guid: 923a285523f6646828b04b04f599da22
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -127,7 +127,112 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: SideWall_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2.4000015
+        width: 86
+        height: 99.6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c13d4e20f0318044a5068d205e2f390
+      internalID: -1079266487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SideWall_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 398.4
+        width: 86
+        height: 99.6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 613da965bde5c4b4abd417e872fe73fe
+      internalID: -1575565480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SideWall_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 299.4
+        width: 86
+        height: 99.6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e8eb241920112e4ea11573f0299ef0f
+      internalID: -130895944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SideWall_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 200.4
+        width: 86
+        height: 99.6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a458de8be74c9cb46aff46a9f97d0b29
+      internalID: -1330902595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SideWall_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 100
+        width: 86
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed5c8ec325ceeec46ad4546061bbb1d4
+      internalID: -1749070036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -138,10 +243,15 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      SideWall_2: -130895944
+      SideWall_1: -1575565480
+      SideWall_3: -1330902595
+      SideWall_0: -1079266487
+      SideWall_4: -1755300006
   spritePackingTag: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
+  pSDShowRemoveMatteOption: 1
   userData: 
   assetBundleName: 
   assetBundleVariant: 

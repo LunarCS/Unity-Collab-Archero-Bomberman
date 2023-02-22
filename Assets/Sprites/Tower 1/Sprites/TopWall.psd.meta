@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d9393746aecb94ae8a80be12baba661f
+guid: d4e73eba481034b6c8b81bf06e2cbb74
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -127,7 +127,112 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: TopWall_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 99.6
+        height: 151
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69d44d978156ffb4081935727fba7882
+      internalID: 1565153537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TopWall_1
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 0
+        width: 99.6
+        height: 151
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be538e6a39eec2848a4ad398b685807c
+      internalID: 506140799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TopWall_2
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 0
+        width: 99.6
+        height: 151
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c0decd776f7f8f46a287a3fb88da26d
+      internalID: 1570908906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TopWall_3
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 0
+        width: 99.6
+        height: 151
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c750ab5d5307e545a223d6a43cdbfb3
+      internalID: -247052078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TopWall_4
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 0
+        width: 99.6
+        height: 151
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdfdbe0dccb86c040b22351a5544b856
+      internalID: -2132691566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -138,10 +243,15 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      TopWall_3: -247052078
+      TopWall_0: 1565153537
+      TopWall_1: 506140799
+      TopWall_2: 1570908906
+      TopWall_4: -2132691566
   spritePackingTag: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
+  pSDShowRemoveMatteOption: 1
   userData: 
   assetBundleName: 
   assetBundleVariant: 
