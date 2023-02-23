@@ -6,9 +6,12 @@ public class Player : MonoBehaviour
 {
     private static Player instance;
     public static Player Instance { get { return instance; } }
-    [SerializeField] float moveSpeed;
+    public float moveSpeed;
+    public bool doubleBomb;
     public Rigidbody2D rb;
     public GameObject bombPrefab;
+    private int currentHealth;
+    public int maxHealth;
     [SerializeField] Joystick joystick;
     private Vector2 moveDirection;
     private Camera cam;
@@ -22,6 +25,7 @@ public class Player : MonoBehaviour
         }
         instance = this;
         cam = Camera.main;
+        currentHealth = maxHealth;
     }
 
     // Update is called once per frame

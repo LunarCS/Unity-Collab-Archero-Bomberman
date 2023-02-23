@@ -681,9 +681,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 500
+  doubleBomb: 0
   rb: {fileID: 509241246}
   bombPrefab: {fileID: 2910482485435094081, guid: 0aefb6b416053a847b6a9d0c59db1c81,
     type: 3}
+  maxHealth: 0
   joystick: {fileID: 1549940868}
 --- !u!50 &509241246
 Rigidbody2D:
@@ -1109,7 +1111,9 @@ GameObject:
   - component: {fileID: 724373669}
   - component: {fileID: 724373671}
   - component: {fileID: 724373670}
-  m_Layer: 0
+  - component: {fileID: 724373672}
+  - component: {fileID: 724373673}
+  m_Layer: 7
   m_Name: TileMapObjects
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1326,6 +1330,42 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!19719996 &724373672
+TilemapCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 724373668}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_MaximumTileChangeCount: 1000
+  m_ExtrusionFactor: 0
+--- !u!249 &724373673
+AreaEffector2D:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 724373668}
+  m_Enabled: 0
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGlobalAngle: 0
+  m_ForceAngle: 0
+  m_ForceMagnitude: 10
+  m_ForceVariation: 0
+  m_ForceTarget: 0
+  m_Drag: 0
+  m_AngularDrag: 0
 --- !u!4 &781560086 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1692034580005305001, guid: 3f17164b7c3a0f0429ae0bd2f95a1f24,
@@ -2187,7 +2227,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1625200997}
   - component: {fileID: 1625200998}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Exit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2516,7 +2556,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2037649110}
   - component: {fileID: 2037649111}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2610,7 +2650,7 @@ PrefabInstance:
     - target: {fileID: 6558896375027392448, guid: f9f9f8c8f8ee50e418297dc3d28fdc72,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.738161
+      value: -2.31
       objectReference: {fileID: 0}
     - target: {fileID: 6558896375027392448, guid: f9f9f8c8f8ee50e418297dc3d28fdc72,
         type: 3}
@@ -2665,7 +2705,7 @@ PrefabInstance:
     - target: {fileID: 6558896375027392476, guid: f9f9f8c8f8ee50e418297dc3d28fdc72,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f9f9f8c8f8ee50e418297dc3d28fdc72, type: 3}
@@ -2679,7 +2719,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2083781259}
   - component: {fileID: 2083781258}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}

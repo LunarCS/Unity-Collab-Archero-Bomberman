@@ -1,16 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class Bomb : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] GameObject particlePrefab;
     public string owner;
+    public Tilemap destructibleTilemap;
+    Vector3Int tilePos;
+    GridLayout grid;
 
     private void Start()
     {
         GameController.Instance.activeBombs++;
+
     }
 
     private void OnDestroy()
