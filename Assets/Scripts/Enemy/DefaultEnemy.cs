@@ -11,7 +11,8 @@ public class DefaultEnemy : Enemy
     }
     private void DropBomb()
     {
-        GameObject bomb = Instantiate(abilityPrefab, transform.position, Quaternion.identity);
-        Destroy(bomb, 1f);
+        Attacks.Instance.doubleBomb = doubleBomb;
+        Attacks.Instance.fuseTimer = fuseTimer;
+        Attacks.Instance.DropBomb();
     }
 }

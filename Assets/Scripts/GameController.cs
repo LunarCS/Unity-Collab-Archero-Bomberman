@@ -11,7 +11,7 @@ public class GameController : MonoBehaviour
     public int activeBombs;
     public int maxBombs;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         if(instance != null)
         {

@@ -6,24 +6,35 @@ public class Player : MonoBehaviour
 {
     private static Player instance;
     public static Player Instance { get { return instance; } }
-    public float moveSpeed;
-    public bool doubleBomb;
+
     public Rigidbody2D rb;
     public GameObject bombPrefab;
     private int currentHealth;
-    public int maxHealth;
+
     [SerializeField] Joystick joystick;
     private Vector2 moveDirection;
     private Camera cam;
-    
 
-    void Start()
+    [Header("Stats")]
+    public float fuseTimer;
+    public bool ricochetBomb;
+    public float moveSpeed;
+    public bool doubleBomb;
+    public int maxHealth;
+
+
+
+    void Awake()
     {
         if (instance != null)
         {
             Destroy(gameObject);
         }
         instance = this;
+
+    }
+    private void Start()
+    {
         cam = Camera.main;
         currentHealth = maxHealth;
     }
@@ -42,10 +53,6 @@ public class Player : MonoBehaviour
     void ProcessInputs()
     {
         MovementInput();
-        CombatInput();
-
-
-
     }
 
     void MovementInput()
@@ -55,19 +62,13 @@ public class Player : MonoBehaviour
         moveDirection = new Vector2(moveX, moveY);
     }
 
-    void CombatInput()
-    { 
-    }
-
     public void DropBomb()
     {
-        if (GameController.Instance.activeBombs >= GameController.Instance.maxBombs)
-        {
-            return;
-        }
-        GameObject bomb = Instantiate(bombPrefab, transform.position, Quaternion.identity);
-        Destroy(bomb, 1f);
+        Attacks.Instance.doubleBomb = doubleBomb;
+        Attacks.Instance.fuseTimer = fuseTimer;
+        Attacks.Instance.DropBomb();
     }
+
 
     void Move()
     {

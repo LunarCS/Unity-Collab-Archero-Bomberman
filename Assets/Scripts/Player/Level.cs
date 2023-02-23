@@ -13,14 +13,20 @@ public class Level : MonoBehaviour
     public int xp;
     private int xpToLevelUp;
 
-    private void Start()
+    private void Awake()
     {
         if (instance != null)
             Destroy(gameObject);
         instance = this;
+
+    }
+
+    private void Start()
+    {
         level = 1;
         xp = 0;
     }
+
     private void Update()
     {
         if (xpToLevelUp <= 0)

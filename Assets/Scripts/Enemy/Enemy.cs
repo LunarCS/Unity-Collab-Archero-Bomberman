@@ -8,5 +8,7 @@ public abstract class Enemy : EnemyMovement
     public float damage;
     public GameObject abilityPrefab;
     public float abilityRate;
+    public bool doubleBomb;
+    public float fuseTimer;
 
 }
