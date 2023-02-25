@@ -43,7 +43,7 @@ public class Bomb : MonoBehaviour
             Collider2D[] nearbyObjects = Physics2D.OverlapCircleAll(transform.position, 1f);
             for (int i = 0; i < nearbyObjects.Length; i++)
             {
-                Debug.Log(nearbyObjects[i])
+                Debug.Log(nearbyObjects[i]);
                 if (nearbyObjects[i].CompareTag("Destructible"))
                     Destroy(nearbyObjects[i].gameObject);
 

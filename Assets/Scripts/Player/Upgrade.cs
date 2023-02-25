@@ -6,6 +6,7 @@ public class Upgrade : MonoBehaviour
 {
     private static Upgrade instance;
     public static Upgrade Instance { get { return instance; } }
+    public int upgradeID;
     public int maxBombsUpgrade;
     public float fuseTimerUpgrade;  
     public bool isDoubleBomb;
