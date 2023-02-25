@@ -167,7 +167,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a8a86f6c5e6ba147afbbeeeffa3a160, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fuseTimer: 0
   doubleBomb: 0
   bombPrefab: {fileID: 2910482485435094081, guid: 0aefb6b416053a847b6a9d0c59db1c81,
     type: 3}
@@ -735,7 +734,7 @@ MonoBehaviour:
   fuseTimer: 3
   ricochetBomb: 0
   moveSpeed: 500
-  doubleBomb: 1
+  doubleBomb: 0
   maxHealth: 0
 --- !u!50 &509241246
 Rigidbody2D:

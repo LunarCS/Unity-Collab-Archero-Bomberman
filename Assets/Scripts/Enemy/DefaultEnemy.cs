@@ -11,8 +11,6 @@ public class DefaultEnemy : Enemy
     }
     private void DropBomb()
     {
-        Attacks.Instance.doubleBomb = doubleBomb;
-        Attacks.Instance.fuseTimer = fuseTimer;
-        Attacks.Instance.DropBomb();
+        Attacks.Instance.DropBomb(transform.position, transform.rotation, fuseTimer, doubleBomb);
     }
 }

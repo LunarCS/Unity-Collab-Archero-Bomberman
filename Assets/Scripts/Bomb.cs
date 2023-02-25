@@ -9,7 +9,9 @@ public class Bomb : MonoBehaviour
     [SerializeField] GameObject particlePrefab;
     public string owner;
     public Tilemap destructibleTilemap;
-    Vector3Int tilePos;
+    public bool doubleBomb;
+    public float fuseTimer;
+    Tilemap tilemap;
     GridLayout grid;
 
     private void Start()
@@ -20,21 +22,37 @@ public class Bomb : MonoBehaviour
 
     private void OnDestroy()
     {
+        if (doubleBomb)
+        {
+            Attacks.Instance.DropBomb(transform.position, transform.rotation, Mathf.Clamp(fuseTimer - 1, 0.5f, fuseTimer), false);
+        }
+        Explode();
+
+    }
+
+    private void Explode()
+    {
         GameObject ps = GameObject.Instantiate(particlePrefab);
         ps.transform.position = transform.position;
         Destroy(ps, 2f);
-        Collider2D[] nearbyObjects = Physics2D.OverlapCircleAll(transform.position, 1f);
-        for (int i = 0; i < nearbyObjects.Length; i++)
-        {
-            if (nearbyObjects[i].CompareTag("Destructible"))
-                Destroy(nearbyObjects[i].gameObject);
+        CheckNearby();
+        GameController.Instance.activeBombs--;
 
-            if (nearbyObjects[i].CompareTag("Player") && owner != "Player")
+        void CheckNearby()
+        {
+            Collider2D[] nearbyObjects = Physics2D.OverlapCircleAll(transform.position, 1f);
+            for (int i = 0; i < nearbyObjects.Length; i++)
             {
-                // Damage Player
+                Debug.Log(nearbyObjects[i])
+                if (nearbyObjects[i].CompareTag("Destructible"))
+                    Destroy(nearbyObjects[i].gameObject);
+
+                if (nearbyObjects[i].CompareTag("Player") && owner != "Player")
+                {
+                    // Damage Player
+                }
             }
         }
-        GameController.Instance.activeBombs--;
     }
 
 }

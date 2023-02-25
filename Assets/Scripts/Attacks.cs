@@ -6,7 +6,6 @@ public class Attacks : MonoBehaviour
 {
     private static Attacks instance;
     public static Attacks Instance { get { return instance; } }
-    public float fuseTimer;
     public bool doubleBomb;
     [SerializeField] GameObject bombPrefab;
 
@@ -16,27 +15,17 @@ public class Attacks : MonoBehaviour
             Destroy(gameObject);
         instance = this;
     }
-    public void DropBomb()
+    public void DropBomb(Vector3 pos, Quaternion rotation, float fuseTimer, bool doubleBomb)
     {
         if (GameController.Instance.activeBombs >= GameController.Instance.maxBombs)
         {
             return;
         }
 
-        bool originalMultipleBombValue = doubleBomb;
-        float originalFuseTimer = fuseTimer;
-
-    instantiateAgain:
-        GameObject bomb = Instantiate(bombPrefab, transform.position, Quaternion.identity);
+        GameObject bomb = Instantiate(bombPrefab, pos, rotation);
         Bomb bombClass = bomb.GetComponent<Bomb>();
+        bombClass.doubleBomb = doubleBomb;
+        bombClass.fuseTimer = fuseTimer;
         Destroy(bomb, fuseTimer);
-        if (doubleBomb)
-        {
-            doubleBomb = false;
-            fuseTimer -= 1f;
-            goto instantiateAgain;
-        }
-        doubleBomb = originalMultipleBombValue;
-        fuseTimer = originalFuseTimer;
     }
 }

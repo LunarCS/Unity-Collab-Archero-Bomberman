@@ -21,31 +21,33 @@ public class Upgrade : MonoBehaviour
         instance = this;
     }
 
+
+    [ContextMenu("Health")]
     public void HealthUpgrade() // Multiply hp
     {
         Player.Instance.maxHealth = Mathf.FloorToInt(Player.Instance.maxHealth * healthUpgrade);
     }
-
+    [ContextMenu("Speed")]
     public void SpeedUpgrade()      // Multiply movespeed
     {
         Player.Instance.moveSpeed = Mathf.FloorToInt(Player.Instance.maxHealth * speedUpgrade);
     }
-
+    [ContextMenu("MaxBomb")]
     public void MaxBombUpgrade()    // add an n amount of max bombs
     {
         GameController.Instance.maxBombs += maxBombsUpgrade;
     }
-
+    [ContextMenu("Double")]
     public void DoubleBombUpgrade()
     {
         Player.Instance.doubleBomb = isDoubleBomb;
     }
-
+    [ContextMenu("Fuse")]
     public void FuseTimerUpgrade()
     {
         Player.Instance.fuseTimer -= fuseTimerUpgrade;
     }
-
+    [ContextMenu("Do Something")]
     public void RicochetUpgrade()
     {
 

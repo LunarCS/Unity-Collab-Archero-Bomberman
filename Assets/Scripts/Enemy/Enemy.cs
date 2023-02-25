@@ -10,5 +10,9 @@ public abstract class Enemy : EnemyMovement
     public float abilityRate;
     public bool doubleBomb;
     public float fuseTimer;
+    private void Start()
+    {
+        
+    }
 
 }
