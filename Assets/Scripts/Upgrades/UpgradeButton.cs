@@ -5,20 +5,19 @@ using UnityEngine.UI;
 
 public class UpgradeButton : MonoBehaviour
 {
-    const int HEALTH_UPGRADE = 0;
-    const int SPEED_UPGRADE = 1;
-    const int MAX_BOMBS_UPGRADE = 2;
-    const int DOUBLE_BOMB_UPGRADE = 3;
-    const int FUSE_UPGRADE = 4;
-    const int DEFENCE_UPGRADE = 5;
+    const int HEALTH_UPGRADE = 1;
+    const int SPEED_UPGRADE = 2;
+    const int MAX_BOMBS_UPGRADE = 3;
+    const int DOUBLE_BOMB_UPGRADE = 4;
+    const int FUSE_UPGRADE = 5;
+    const int DEFENCE_UPGRADE = 6;
 
-    Color HEALTH_COLOR = new Color(208, 0, 50);
-    Color SPEED_COLOR = new Color(79, 221, 255);
-    Color FUSE_TIME_COLOR = new Color(255, 207, 19);
-    Color DOUBLE_BOMB_COLOR = new Color(38, 38, 38);
-    Color MAX_BOMB_COLOR = new Color(248, 126, 7);
-    Color DEFENCE_COLOR = new Color(195, 0, 208);
-
+    Color HEALTH_COLOR = new(208 / 255f, 0f, 50 / 255f);
+    Color SPEED_COLOR = new Color(79 / 255f, 221 / 255f, 255 / 255f);
+    Color FUSE_TIME_COLOR = new Color(255 / 255f, 207 / 255f, 19 / 255f);
+    Color DOUBLE_BOMB_COLOR = new Color(38 / 255f, 38 / 255f, 38 / 255f);
+    Color MAX_BOMB_COLOR = new Color(248 / 255f, 126 / 255f, 7 / 255f);
+    Color DEFENCE_COLOR = new Color(195 / 255f, 0f, 208 / 255f);
     public Image icon;
 
     public void GetUpgradeChoice(int id, ref Image[] icons)
@@ -68,6 +67,10 @@ public class UpgradeButton : MonoBehaviour
                 icon.color = DEFENCE_COLOR;
                 break;
         }
-        icon.color = HEALTH_COLOR;
+    }
+
+    public void OnClick()
+    {
+        //icon.color = HEALTH_COLOR;
     }
 }

@@ -16,7 +16,7 @@ public class LoadUpgrade : MonoBehaviour
 
     private void OnEnable()
     {
-        GenerateRandomSequence(ref upgradeButtonID, 0, 6);
+        GenerateRandomSequence(ref upgradeButtonID, 1, 7);
         for (int i = 0; i < upgradeButtons.Length; i++)
         {
             upgradeButtons[i].UpdateIcons(upgradeButtonID[i], ref upgradeButtons[i].icon);
@@ -36,7 +36,7 @@ public class LoadUpgrade : MonoBehaviour
                 if (randomArr[j] == random)
                 {
                     random = Random.Range(start, end);
-                    j = 0;
+                    j = -1;
                 }
             }
 
