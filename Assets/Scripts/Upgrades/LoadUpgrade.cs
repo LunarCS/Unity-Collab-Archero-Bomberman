@@ -8,10 +8,18 @@ using Random = UnityEngine.Random;
 public class LoadUpgrade : MonoBehaviour
 {
 
-
+    private static LoadUpgrade instance;
+    public static LoadUpgrade Instance { get { return instance; } }
 
     [SerializeField] UpgradeButton[] upgradeButtons = new UpgradeButton[3];
     int[] upgradeButtonID = new int[3];
+
+    private void Awake()
+    {
+        if (instance != null)
+            Destroy(gameObject);
+        instance = this;
+    }
 
 
     private void OnEnable()
@@ -22,9 +30,6 @@ public class LoadUpgrade : MonoBehaviour
             upgradeButtons[i].UpdateIcons(upgradeButtonID[i], ref upgradeButtons[i].icon);
         }
     }
-
-
-
 
     private void GenerateRandomSequence(ref int[] randomArr, int start, int end)
     {

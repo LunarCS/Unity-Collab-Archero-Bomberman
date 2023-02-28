@@ -20,7 +20,7 @@ public class UpgradeButton : MonoBehaviour
     Color DEFENCE_COLOR = new Color(195 / 255f, 0f, 208 / 255f);
     public Image icon;
 
-    public void GetUpgradeChoice(int id, ref Image[] icons)
+    public void GetUpgradeChoice(int id)
     {
         switch (id)
         {
@@ -67,10 +67,5 @@ public class UpgradeButton : MonoBehaviour
                 icon.color = DEFENCE_COLOR;
                 break;
         }
-    }
-
-    public void OnClick()
-    {
-        //icon.color = HEALTH_COLOR;
     }
 }

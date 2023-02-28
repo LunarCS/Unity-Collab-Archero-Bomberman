@@ -2234,6 +2234,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 0
+  upgradeManager: {fileID: 0}
   xp: 0
 --- !u!114 &1445936301
 MonoBehaviour:
@@ -2523,6 +2524,11 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4152061781520704941, guid: 3a524b96c56594d5e97403121cd2733e,
+        type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6557549589414278955, guid: 3a524b96c56594d5e97403121cd2733e,
         type: 3}
       propertyPath: m_Pivot.x
@@ -2671,7 +2677,7 @@ PrefabInstance:
     - target: {fileID: 8437940250143244899, guid: 3a524b96c56594d5e97403121cd2733e,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a524b96c56594d5e97403121cd2733e, type: 3}

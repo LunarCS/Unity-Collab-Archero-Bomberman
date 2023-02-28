@@ -10,6 +10,7 @@ public class Level : MonoBehaviour
     [HideInInspector]
     public int level;
 
+    [SerializeField] LoadUpgrade upgradeManager;
     public int xp;
     private int xpToLevelUp;
 
@@ -43,7 +44,10 @@ public class Level : MonoBehaviour
 
     private void LevelUp()
     {
-        level++;
+        if(++level % 2 == 0)
+        {
+            upgradeManager.gameObject.SetActive(true);
+        };
         xp = -xpToLevelUp;
         
     }
