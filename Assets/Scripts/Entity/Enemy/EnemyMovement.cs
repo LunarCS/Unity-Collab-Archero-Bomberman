@@ -9,7 +9,6 @@ public class EnemyMovement : MonoBehaviour
     public int currentAxis;
     public Rigidbody2D rb;
     private Vector3 startingPostion;
-    private Collider2D enemyCollider;
     public float moveRadius = 10f;
     public int moveSpeed = 3;
 

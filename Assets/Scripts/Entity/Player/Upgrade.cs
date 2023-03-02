@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Upgrade : MonoBehaviour
+public class Upgrade : Player
 {
-    private static Upgrade instance;
-    public static Upgrade Instance { get { return instance; } }
+    private static Upgrade s_uinstance;
+    public static Upgrade UInstance { get { return s_uinstance; } }
     public int upgradeID;
     public int maxBombsUpgrade;
     public float fuseTimerUpgrade;  
@@ -15,38 +15,38 @@ public class Upgrade : MonoBehaviour
     public int speedUpgrade;
     public bool isRicochet;
 
-    private void Start()
+    private void Awake()
     {
-        if (instance != null)
+        if (s_uinstance != null)
             Destroy(gameObject);
-        instance = this;
+        s_uinstance = this;
     }
 
 
     [ContextMenu("Health")]
     public void HealthUpgrade() // Multiply hp
     {
-        Player.Instance.maxHealth = Mathf.FloorToInt(Player.Instance.maxHealth * healthUpgrade);
+        MaxHealth = Mathf.FloorToInt(MaxHealth * healthUpgrade);
     }
     [ContextMenu("Speed")]
     public void SpeedUpgrade()      // Multiply movespeed
     {
-        Player.Instance.moveSpeed = Mathf.FloorToInt(Player.Instance.maxHealth * speedUpgrade);
+        MoveSpeed = Mathf.FloorToInt(MoveSpeed * speedUpgrade);
     }
     [ContextMenu("MaxBomb")]
     public void MaxBombUpgrade()    // add an n amount of max bombs
     {
-        GameController.Instance.maxBombs += maxBombsUpgrade;
+        GameController.Instance.MaxBombs += maxBombsUpgrade;
     }
     [ContextMenu("Double")]
     public void DoubleBombUpgrade()
     {
-        Player.Instance.doubleBomb = isDoubleBomb;
+        DoubleBomb = isDoubleBomb;
     }
     [ContextMenu("Fuse")]
     public void FuseTimerUpgrade()
     {
-        Player.Instance.fuseTimer -= fuseTimerUpgrade;
+        FuseTimer -= fuseTimerUpgrade;
     }
     [ContextMenu("Do Something")]
     public void RicochetUpgrade()

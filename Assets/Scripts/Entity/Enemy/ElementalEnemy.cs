@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ElementalEnemy : Enemy
 {
-    public ParticleSystem element;
+    [SerializeField] ParticleSystem element;
 
     private void Start()
     {

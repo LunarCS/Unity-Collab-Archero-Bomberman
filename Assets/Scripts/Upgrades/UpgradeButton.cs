@@ -25,19 +25,19 @@ public class UpgradeButton : MonoBehaviour
         switch (id)
         {
             case HEALTH_UPGRADE:
-                Upgrade.Instance.HealthUpgrade();
+                Upgrade.UInstance.HealthUpgrade();
                 break;
             case SPEED_UPGRADE:
-                Upgrade.Instance.SpeedUpgrade();
+                Upgrade.UInstance.SpeedUpgrade();
                 break;
             case MAX_BOMBS_UPGRADE:
-                Upgrade.Instance.MaxBombUpgrade();
+                Upgrade.UInstance.MaxBombUpgrade();
                 break;
             case DOUBLE_BOMB_UPGRADE:
-                Upgrade.Instance.DoubleBombUpgrade();
+                Upgrade.UInstance.DoubleBombUpgrade();
                 break;
             case FUSE_UPGRADE:
-                Upgrade.Instance.FuseTimerUpgrade();
+                Upgrade.UInstance.FuseTimerUpgrade();
                 break;
             case DEFENCE_UPGRADE:
                 break;

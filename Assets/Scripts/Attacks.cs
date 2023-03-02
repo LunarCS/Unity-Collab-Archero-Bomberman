@@ -17,14 +17,14 @@ public class Attacks : MonoBehaviour
     }
     public void DropBomb(Vector3 pos, Quaternion rotation, float fuseTimer, bool doubleBomb)
     {
-        if (GameController.Instance.activeBombs >= GameController.Instance.maxBombs)
+        if (GameController.Instance.ActiveBombs >= GameController.Instance.MaxBombs)
         {
             return;
         }
 
         GameObject bomb = Instantiate(bombPrefab, pos, rotation);
         Bomb bombClass = bomb.GetComponent<Bomb>();
-        bombClass.doubleBomb = doubleBomb;
+        bombClass.DoubleBomb = doubleBomb;
         bombClass.fuseTimer = fuseTimer;
         Destroy(bomb, fuseTimer);
     }

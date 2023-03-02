@@ -2,41 +2,37 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Player : Entity
 {
-    private static Player instance;
-    public static Player Instance { get { return instance; } }
+    private static Player s_instance;
+    public static Player Instance { get { return s_instance; } }
 
-    public Rigidbody2D rb;
-    public GameObject bombPrefab;
-    private int currentHealth;
+
 
     [SerializeField] Joystick joystick;
     private Vector2 moveDirection;
     private Camera cam;
 
-    [Header("Stats")]
-    public float fuseTimer;
-    public bool ricochetBomb;
-    public float moveSpeed;
-    public bool doubleBomb;
-    public int maxHealth;
+
 
 
 
     void Awake()
     {
-        if (instance != null)
+        if (s_instance != null)
         {
             Destroy(gameObject);
         }
-        instance = this;
+        s_instance = this;
+        
 
     }
     private void Start()
     {
         cam = Camera.main;
-        currentHealth = maxHealth;
+        MoveSpeed = 250;
+        FuseTimer = 3;
+        CurrentHealth = MaxHealth;
     }
 
     // Update is called once per frame
@@ -62,14 +58,20 @@ public class Player : MonoBehaviour
         moveDirection = new Vector2(moveX, moveY);
     }
 
-    public void DropBomb()
+    protected override void Move()
     {
-        Attacks.Instance.DropBomb(transform.position, transform.rotation, fuseTimer, doubleBomb);
+        _rb.velocity = new Vector2(moveDirection.x * MoveSpeed * Time.deltaTime, moveDirection.y * MoveSpeed * Time.deltaTime);
+    }
+
+    public void DropBombButton()
+    {
+        DropBomb();
+    }
+    protected override void DropBomb()
+    {
+        Attacks.Instance.DropBomb(transform.position, transform.rotation, FuseTimer, DoubleBomb);
     }
 
 
-    void Move()
-    {
-        rb.velocity = new Vector2(moveDirection.x * moveSpeed * Time.deltaTime, moveDirection.y * moveSpeed * Time.deltaTime);
-    }
+
 }

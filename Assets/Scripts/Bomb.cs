@@ -7,22 +7,22 @@ public class Bomb : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] GameObject particlePrefab;
-    public string owner;
-    public Tilemap destructibleTilemap;
-    public bool doubleBomb;
-    public float fuseTimer;
+    public string Owner { get; set; }
+    [SerializeField] Tilemap destructibleTilemap;
+    public bool DoubleBomb { get; set; }
+    public float fuseTimer { get; set; }
     Tilemap tilemap;
     GridLayout grid;
 
     private void Start()
     {
-        GameController.Instance.activeBombs++;
+        GameController.Instance.ActiveBombs++;
 
     }
 
     private void OnDestroy()
     {
-        if (doubleBomb)
+        if (DoubleBomb)
         {
             Attacks.Instance.DropBomb(transform.position, transform.rotation, Mathf.Clamp(fuseTimer - 1, 0.5f, fuseTimer), false);
         }
@@ -32,11 +32,11 @@ public class Bomb : MonoBehaviour
 
     private void Explode()
     {
-        GameObject ps = GameObject.Instantiate(particlePrefab);
+        GameObject ps = Instantiate(particlePrefab);
         ps.transform.position = transform.position;
         Destroy(ps, 2f);
         CheckNearby();
-        GameController.Instance.activeBombs--;
+        GameController.Instance.ActiveBombs--;
 
         void CheckNearby()
         {
@@ -47,7 +47,7 @@ public class Bomb : MonoBehaviour
                 if (nearbyObjects[i].CompareTag("Destructible"))
                     Destroy(nearbyObjects[i].gameObject);
 
-                if (nearbyObjects[i].CompareTag("Player") && owner != "Player")
+                if (nearbyObjects[i].CompareTag("Player") && Owner != "Player")
                 {
                     // Damage Player
                 }

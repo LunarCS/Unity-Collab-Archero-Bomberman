@@ -30,10 +30,6 @@ public class Level : MonoBehaviour
 
     private void Update()
     {
-        if (xpToLevelUp <= 0)
-        {
-            LevelUp();
-        }
     }
 
     public void GainXP(int xpGained)
