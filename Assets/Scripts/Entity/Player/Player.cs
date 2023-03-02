@@ -69,7 +69,9 @@ public class Player : Entity
     }
     protected override void DropBomb()
     {
-        BombController.Instance.DropBomb(transform.position, FuseTimer, DoubleBomb);
+        if (BombController.Instance.ActiveBombs >= BombController.Instance.MaxBombs)
+            return;
+        StartCoroutine(BombController.Instance.DropBomb(transform.position, FuseTimer, DoubleBomb));
     }
 
 

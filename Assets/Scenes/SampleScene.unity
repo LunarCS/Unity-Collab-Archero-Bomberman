@@ -739,6 +739,7 @@ GameObject:
   - component: {fileID: 509241246}
   - component: {fileID: 509241245}
   - component: {fileID: 509241248}
+  - component: {fileID: 509241249}
   m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
@@ -827,6 +828,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &509241249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 509241244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 638aa6fc69b26754b8e41b5f7b9ee104, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bombPrefab: {fileID: 2910482485435094081, guid: 0aefb6b416053a847b6a9d0c59db1c81,
+    type: 3}
+  particlePrefab: {fileID: 8356509735841109570, guid: 3903b745feb0e8c42b39b1826428bda9,
+    type: 3}
+  layer:
+    serializedVersion: 2
+    m_Bits: 128
+  destructibleTileMap: {fileID: 0}
+  explosion: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1254,7 +1276,7 @@ TilemapRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
-  m_ChunkCullingBounds: {x: 0, y: 0.13867188, z: 0}
+  m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
   m_MaxFrameAge: 16
   m_SortOrder: 0
@@ -3698,75 +3720,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 344e03a7408c62b4db67173efc34a711, type: 3}
---- !u!1001 &643809551251854525
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 757046637866675659, guid: 3903b745feb0e8c42b39b1826428bda9,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 757046637866675659, guid: 3903b745feb0e8c42b39b1826428bda9,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 2.1935384
-      objectReference: {fileID: 0}
-    - target: {fileID: 757046637866675659, guid: 3903b745feb0e8c42b39b1826428bda9,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1.2268764
-      objectReference: {fileID: 0}
-    - target: {fileID: 757046637866675659, guid: 3903b745feb0e8c42b39b1826428bda9,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.0882612
-      objectReference: {fileID: 0}
-    - target: {fileID: 757046637866675659, guid: 3903b745feb0e8c42b39b1826428bda9,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 757046637866675659, guid: 3903b745feb0e8c42b39b1826428bda9,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 757046637866675659, guid: 3903b745feb0e8c42b39b1826428bda9,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 757046637866675659, guid: 3903b745feb0e8c42b39b1826428bda9,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 757046637866675659, guid: 3903b745feb0e8c42b39b1826428bda9,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 757046637866675659, guid: 3903b745feb0e8c42b39b1826428bda9,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 757046637866675659, guid: 3903b745feb0e8c42b39b1826428bda9,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8356509735841109570, guid: 3903b745feb0e8c42b39b1826428bda9,
-        type: 3}
-      propertyPath: m_Name
-      value: ExplosionParticles
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 3903b745feb0e8c42b39b1826428bda9, type: 3}
 --- !u!1001 &883359017108568854
 PrefabInstance:
   m_ObjectHideFlags: 0

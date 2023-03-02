@@ -22,10 +22,7 @@ public class Bomb : MonoBehaviour
 
     private void OnDestroy()
     {
-        if (DoubleBomb)
-        {
-            BombController.Instance.DropBomb(transform.position, Mathf.Clamp(FuseTimer - 1, 0.5f, FuseTimer), false);
-        }
+        BombController.Instance.ActiveBombs--;
 
     }
 

@@ -1,6 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
+using UnityEngine.UIElements;
 
 public class BombController : MonoBehaviour
 {
@@ -8,6 +11,9 @@ public class BombController : MonoBehaviour
 
     [SerializeField] GameObject bombPrefab;
     [SerializeField] GameObject particlePrefab;
+    [SerializeField] LayerMask layer;
+    [SerializeField] Tilemap destructibleTileMap;
+
     Player player;
     public int ActiveBombs { get; set; }
     public int MaxBombs { get; set; }
@@ -26,31 +32,30 @@ public class BombController : MonoBehaviour
     {
         player = GetComponentInParent<Player>();
         MaxBombs = 3;
+        ExplosionRadius = 3;
     }
 
-    public void DropBomb(Vector3 pos, float fuseTimer, bool doubleBomb)
+    public IEnumerator DropBomb(Vector3 pos, float fuseTimer, bool doubleBomb)
     {
-        if (ActiveBombs >= MaxBombs)
-        {
-            return;
-        }
-        float gridX = Mathf.Round(pos.x + 0.5f) - 0.5f;
-        float gridY = Mathf.Round(pos.y + 0.5f) - 0.5f;
+
+        float gridX = Mathf.Round(pos.x) + 0.5f;
+        float gridY = Mathf.Round(pos.y) + 0.5f;
+        Vector2 bombGridPostion = new Vector2(gridX, gridY);
 
 
 
-        GameObject bomb = Instantiate(bombPrefab, new Vector2(gridX, gridY), Quaternion.identity);
+
+        GameObject bomb = Instantiate(bombPrefab, bombGridPostion, Quaternion.identity);
         Bomb bombClass = bomb.GetComponent<Bomb>();
         bombClass.DoubleBomb = doubleBomb;
         bombClass.FuseTimer = fuseTimer;
-        GameObject ps = Instantiate(particlePrefab);
-        ps.transform.position = bomb.transform.position;
-
+        yield return new WaitForSeconds(fuseTimer);
         Explode(bomb.transform.position, Vector2.up, ExplosionRadius, 1f);
         Explode(bomb.transform.position, Vector2.right, ExplosionRadius, 1f);
         Explode(bomb.transform.position, Vector2.down, ExplosionRadius, 1f);
         Explode(bomb.transform.position, Vector2.left, ExplosionRadius, 1f);
-        Destroy(bomb, fuseTimer);
+        Destroy(bomb);
+
     }
 
     void Explode(Vector2 position, Vector2 direction, int length, float explosionTime)
@@ -58,17 +63,28 @@ public class BombController : MonoBehaviour
         if (length <= 0)
             return;
 
-        position += direction;
+        if (Physics2D.OverlapBox(position, Vector2.one / 2, 0f, layer))
+        {
+            ClearDestructible(position);
+            return;
+        }
+
         GameObject ps = Instantiate(particlePrefab);
-        ps.transform.position = transform.position;
+        ps.transform.position = position;
         Destroy(ps, explosionTime);
+        position += direction;
         Explode(position, direction, length - 1, explosionTime);
 
 
     }
 
-
-
-
-
+    private void ClearDestructible(Vector2 position)
+    {
+        Vector3Int cell = destructibleTileMap.WorldToCell(position);
+        TileBase tile = destructibleTileMap.GetTile(cell);
+        if (tile != null)
+        {
+            destructibleTileMap.SetTile(cell, null);
+        }
+    }
 }
