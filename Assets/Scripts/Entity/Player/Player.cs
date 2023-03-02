@@ -69,7 +69,7 @@ public class Player : Entity
     }
     protected override void DropBomb()
     {
-        Attacks.Instance.DropBomb(transform.position, transform.rotation, FuseTimer, DoubleBomb);
+        BombController.Instance.DropBomb(transform.position, FuseTimer, DoubleBomb);
     }
 
 
