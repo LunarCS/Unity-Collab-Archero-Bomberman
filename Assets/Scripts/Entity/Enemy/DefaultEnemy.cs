@@ -15,7 +15,7 @@ public class DefaultEnemy : Enemy
         GameObject bomb = Instantiate(_bombPrefab, transform.position, transform.rotation);
         Bomb bombClass = bomb.GetComponent<Bomb>();
         bombClass.DoubleBomb = DoubleBomb;
-        bombClass.fuseTimer = FuseTimer;
+        bombClass.FuseTimer = FuseTimer;
         Destroy(bomb, FuseTimer);
     }
 }

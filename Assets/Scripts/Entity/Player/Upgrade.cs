@@ -36,7 +36,7 @@ public class Upgrade : Player
     [ContextMenu("MaxBomb")]
     public void MaxBombUpgrade()    // add an n amount of max bombs
     {
-        GameController.Instance.MaxBombs += maxBombsUpgrade;
+        BombController.Instance.MaxBombs += maxBombsUpgrade;
     }
     [ContextMenu("Double")]
     public void DoubleBombUpgrade()
