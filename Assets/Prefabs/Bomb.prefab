@@ -109,8 +109,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1780924229144992066}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.42, z: 0}
-  m_LocalScale: {x: 0.18060696, y: 0.05372637, z: 0.5996247}
+  m_LocalPosition: {x: 0, y: -0.297, z: 0}
+  m_LocalScale: {x: 0.13959111, y: 0.029796645, z: 0.5996247}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6844659001066720779}
@@ -214,6 +214,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97bfec51f17dde84f8dd089690304058, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  particlePrefab: {fileID: 8356509735841109570, guid: 3903b745feb0e8c42b39b1826428bda9,
-    type: 3}
-  owner: 
+  destructibleTilemap: {fileID: 0}
