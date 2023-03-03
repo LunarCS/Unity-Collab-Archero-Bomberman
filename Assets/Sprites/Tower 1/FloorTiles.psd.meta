@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3fa7a7ae772f3488ea7050c15ebb48c4
+guid: 8fd90e2fe8f664ee995f7cc876159630
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -129,7 +129,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: UnBreakableTiles_0
+      name: FloorTiles_0
       rect:
         serializedVersion: 2
         x: 0
@@ -143,29 +143,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 88965c306ddbd48f3b52473b6d0742f5
-      internalID: 2118410951
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UnBreakableTiles_1
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 768
-        width: 256
-        height: 256
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 64efbdd0714c6481fbc3bc321ff70c23
-      internalID: -8900285
+      spriteID: 236ac445351754c9f825f15f0b0ceee4
+      internalID: 492572466
       vertices: []
       indices: 
       edges: []
@@ -181,8 +160,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      UnBreakableTiles_1: -8900285
-      UnBreakableTiles_0: 2118410951
+      FloorTiles_0: 492572466
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 1
