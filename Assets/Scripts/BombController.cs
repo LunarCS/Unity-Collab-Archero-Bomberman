@@ -10,7 +10,7 @@ public class BombController : MonoBehaviour
     public static BombController Instance { get; private set; }
 
     [SerializeField] GameObject bombPrefab;
-    [SerializeField] GameObject particlePrefab;
+    [SerializeField] Explosion particleManager;
     [SerializeField] LayerMask layer;
     [SerializeField] Tilemap destructibleTileMap;
 
@@ -18,7 +18,6 @@ public class BombController : MonoBehaviour
     public int ActiveBombs { get; set; }
     public int MaxBombs { get; set; }
 
-    [SerializeField] ParticleSystem explosion;
     public int ExplosionRadius { get; set; }
 
     private void Awake()
@@ -62,16 +61,15 @@ public class BombController : MonoBehaviour
     {
         if (length <= 0)
             return;
-
         if (Physics2D.OverlapBox(position, Vector2.one / 2, 0f, layer))
         {
             ClearDestructible(position);
             return;
         }
 
-        GameObject ps = Instantiate(particlePrefab);
+        Explosion ps = Instantiate(particleManager);
         ps.transform.position = position;
-        Destroy(ps, explosionTime);
+        ps.ParticleChoice(0, explosionTime);
         position += direction;
         Explode(position, direction, length - 1, explosionTime);
 
