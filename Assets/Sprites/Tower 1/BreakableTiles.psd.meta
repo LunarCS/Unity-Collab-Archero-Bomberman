@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 36f3fbf4ce4df473390706d49d45680d
+guid: 2ffefd29934c2410d9434d9ec64e278f
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -129,7 +129,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: TileMap_0
+      name: BreakableTiles_0
       rect:
         serializedVersion: 2
         x: 0
@@ -143,14 +143,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0fced3d19009b47fb8410a9bea64376a
-      internalID: -1946850376
+      spriteID: 46741bd9c9aac4f86a420a4fe1499aee
+      internalID: -701866264
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileMap_1
+      name: BreakableTiles_1
       rect:
         serializedVersion: 2
         x: 256
@@ -164,14 +164,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e532f436615e54d888f906f2f0d830c2
-      internalID: -1128590281
+      spriteID: 50252c20afdd44f4c902f1004f89e836
+      internalID: 996111347
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileMap_2
+      name: BreakableTiles_2
       rect:
         serializedVersion: 2
         x: 512
@@ -185,14 +185,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0009bce425e4f41d58c1ade6bd4dfde7
-      internalID: 350879928
+      spriteID: f38602979e43b4d80b86d3c99181bfe0
+      internalID: -1811044189
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileMap_3
+      name: BreakableTiles_3
       rect:
         serializedVersion: 2
         x: 768
@@ -206,14 +206,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aa546dd7de17e444f9b351387171b0b3
-      internalID: -1470896005
+      spriteID: 5ece5746ad54841ab9ab112b1459e727
+      internalID: -1212902891
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileMap_4
+      name: BreakableTiles_4
       rect:
         serializedVersion: 2
         x: 0
@@ -227,14 +227,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2497fc852edb44f8c93667e3dede5add
-      internalID: -1422792167
+      spriteID: 9f1aab507a45c45148e97841a544b3ad
+      internalID: 304744668
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileMap_5
+      name: BreakableTiles_5
       rect:
         serializedVersion: 2
         x: 256
@@ -248,14 +248,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f5e64763d28604612b28c8dc45153dad
-      internalID: -1016962160
+      spriteID: e2ab5691060d64852b9692bde08b0f88
+      internalID: 222259090
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileMap_6
+      name: BreakableTiles_6
       rect:
         serializedVersion: 2
         x: 512
@@ -269,8 +269,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 036e183b158aa4c43be3d7835258a405
-      internalID: 1675250467
+      spriteID: 3da73b43e6ed04a9aac0f223464f117c
+      internalID: 1053126663
       vertices: []
       indices: 
       edges: []
@@ -286,13 +286,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      TileMap_5: -1016962160
-      TileMap_4: -1422792167
-      TileMap_0: -1946850376
-      TileMap_3: -1470896005
-      TileMap_6: 1675250467
-      TileMap_2: 350879928
-      TileMap_1: -1128590281
+      BreakableTiles_6: 1053126663
+      BreakableTiles_0: -701866264
+      BreakableTiles_2: -1811044189
+      BreakableTiles_1: 996111347
+      BreakableTiles_4: 304744668
+      BreakableTiles_3: -1212902891
+      BreakableTiles_5: 222259090
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 1
