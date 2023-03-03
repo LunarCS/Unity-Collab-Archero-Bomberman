@@ -6,12 +6,10 @@ public class Level : MonoBehaviour
 {
     private static Level instance;
     public static Level Instance { get { return instance; } }
-
-    [HideInInspector]
-    public int level;
+    public int CurrentLevel { get; set; }
 
     [SerializeField] LoadUpgrade upgradeManager;
-    public int xp;
+    public int XP { get; set; }
     private int xpToLevelUp;
 
     private void Awake()
@@ -24,8 +22,8 @@ public class Level : MonoBehaviour
 
     private void Start()
     {
-        level = 1;
-        xp = 0;
+        CurrentLevel = 1;
+        XP = 0;
     }
 
     private void Update()
@@ -34,17 +32,17 @@ public class Level : MonoBehaviour
 
     public void GainXP(int xpGained)
     {
-        xp += xpGained;
+        XP += xpGained;
         xpToLevelUp -= xpGained;
     }
 
     private void LevelUp()
     {
-        if(++level % 2 == 0)
+        if(++CurrentLevel % 2 == 0)
         {
             upgradeManager.gameObject.SetActive(true);
         };
-        xp = -xpToLevelUp;
+        XP = -xpToLevelUp;
         
     }
 }

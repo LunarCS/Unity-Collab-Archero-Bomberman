@@ -9,7 +9,7 @@ public class Explosion : MonoBehaviour
     public void ParticleChoice(int particleIndex, float lifeTime)
     {
         particles[particleIndex].gameObject.SetActive(true);
-        Destroy(particles[particleIndex].gameObject, lifeTime);
+        Destroy(gameObject, lifeTime);
     }
 
 

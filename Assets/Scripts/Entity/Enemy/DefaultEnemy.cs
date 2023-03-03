@@ -8,6 +8,7 @@ public class DefaultEnemy : Enemy
     private void Start()
     {
         InvokeRepeating(nameof(DropBomb), 2f, abilityRate);
+        
     }
 
     protected override void DropBomb()

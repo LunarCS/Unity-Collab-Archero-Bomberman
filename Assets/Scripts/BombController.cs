@@ -32,6 +32,7 @@ public class BombController : MonoBehaviour
         player = GetComponentInParent<Player>();
         MaxBombs = 3;
         ExplosionRadius = 3;
+        
     }
 
     public IEnumerator DropBomb(Vector3 pos, float fuseTimer, bool doubleBomb)
@@ -64,6 +65,7 @@ public class BombController : MonoBehaviour
         if (Physics2D.OverlapBox(position, Vector2.one / 2, 0f, layer))
         {
             ClearDestructible(position);
+            ClearDestructible(position + direction);
             return;
         }
 
